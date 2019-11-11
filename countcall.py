@@ -1,0 +1,1 @@
+f=open('C:\Users\76419\Desktop\sfcexe.txt')

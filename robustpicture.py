@@ -31,7 +31,7 @@ def get_key(strr):
     return s
 
 def embed(path,watercode,newpath):
-    image_array = cv2.imread(path)
+    image_array = cv2.cv2.imread(path)
    # image_yuv=cv2.cvtColor(image_array,cv2.cv2.COLOR_BGR2YCR_CB) 
     image_y=image_array[:,:,0]
     hanglength=image_y.shape[0]
@@ -49,7 +49,7 @@ def embed(path,watercode,newpath):
             array=np.zeros((8,8))#生成一个8*8的数组
             array_needdct=image_y[i:i+8,j:j+8].copy()#拷贝数组
             array_float=np.float32(array_needdct)
-            arraydct=cv2.dct(array_float)
+            arraydct=cv2.cv2.dct(array_float)
             #水印嵌入
             a=arraydct[1,0]
             b=arraydct[2,0]
@@ -85,10 +85,10 @@ def embed(path,watercode,newpath):
             break
     image_array[:,:,0]=image_y
    # image_newarray=cv2.cvtColor(image_array,cv2.cv2.COLOR_BGR2YCR_CB) 
-    cv2.imwrite(newpath,image_array)
+    cv2.cv2.imwrite(newpath,image_array)
 
 if __name__=='__main__':
-        pictureurl='C:\\Users\\76419\\Desktop\\picture.bmp'
-        newpictureurl='C:\\Users\\76419\\Desktop\\newpicture.bmp'
+        pictureurl='C:\\Users\\karen\\Desktop\\water\\lenacolor.bmp'
+        newpictureurl='C:\\Users\\karen\\Desktop\\water\\lenawatered.bmp'
         key=get_key('chao')
         embed(pictureurl,key,newpictureurl)

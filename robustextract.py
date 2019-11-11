@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 def extract(newpath):
-    image_array=cv2.imread(newpath)
+    image_array=cv2.cv2.imread(newpath)
     #image_yuv=cv2.cv2.cvtColor(image_array,cv2.cv2.COLOR_BGR2YCR_CB)
     image_y=image_array[:,:,0]
     hanglength=image_y.shape[0]
@@ -22,7 +22,7 @@ def extract(newpath):
             array=np.zeros((8,8))#生成一个8*8的数组
             array_needdct=image_y[i:i+8,j:j+8].copy()#拷贝数组
             array_float=np.float32(array_needdct)
-            arraydct=cv2.dct(array_float)
+            arraydct=cv2.cv2.dct(array_float)
             #arraydct=cv2.dct(array_needdct)
             a=arraydct[1,0]
             b=arraydct[2,0]
@@ -68,5 +68,5 @@ def extract(newpath):
     print(watermark)
 
 if __name__=='__main__':
-        newpictureurl='C:\\Users\\76419\\Desktop\\newpicture.bmp'
+        newpictureurl='C:\\Users\\karen\\Desktop\\water\\lenawatered.bmp'
         extract(newpictureurl)

@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 def extract(embed_path):
-    im_array = cv2.imread(embed_path, cv2.IMREAD_COLOR)
+    im_array = cv2.cv2.imread(embed_path, cv2.cv2.IMREAD_COLOR)
     im_array_flatten = im_array.flatten()
 
     length_bin_string = '0b'
@@ -32,4 +32,4 @@ def extract(embed_path):
     print(watermark)
 
 if __name__ == '__main__':
-    extract('C:\\Users\\76419\\Desktop\\newpicture.bmp')
+    extract('C:\\Users\\karen\\Desktop\\water\\lenawatered.bmp')

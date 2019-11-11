@@ -30,7 +30,7 @@ def get_key(strr):
 
 #嵌入水印
 def embed(picturepath,code,newpath):
-     image_array = cv2.imread(picturepath, cv2.IMREAD_COLOR)
+     image_array= cv2.cv2.imread(picturepath, cv2.cv2.IMREAD_COLOR)
      im_array_flatten = image_array.flatten()
      length=len(code)
      codelist=list(code)
@@ -47,8 +47,8 @@ def embed(picturepath,code,newpath):
      cv2.cv2.imwrite(newpath, reshape)
 #waitKey()函数的功能是不断刷新图像，频率时间为delay，单位为ms。返回值为当前键盘按键值。
 if __name__=='__main__':
-        pictureurl='C:\\Users\\76419\\Desktop\\picture.bmp'
+        pictureurl='C:\\Users\\karen\\Desktop\\water\\lenacolor.bmp'
         #\是错误的
-        newpictureurl='C:\\Users\\76419\\Desktop\\newpicture.bmp'
+        newpictureurl='C:\\Users\\karen\\Desktop\\water\\lenawatered.bmp'
         key=get_key('I am chao haha')#将嵌入信息转化为二进制
         embed(pictureurl,key,newpictureurl)#嵌入水印
